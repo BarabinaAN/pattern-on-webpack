@@ -1,0 +1,44 @@
+{
+  "name": "work-pattern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server"
+  },
+  "author": "Natalia Barabina",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "autoprefixer": "^9.7.3",
+    "babel-loader": "^8.0.0-beta.6",
+    "css-loader": "^3.4.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.0",
+    "postcss-loader": "^3.0.0",
+    "raw-loader": "^4.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.2",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-livereload-plugin": "^2.2.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
