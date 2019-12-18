@@ -1,3 +1,12 @@
 
-<%= _.template(require('./../header.html'))() %>
-<%= _.template(require('./../footer.html'))() %>
+<% var data = {
+  title: "Заголовок | Проект",
+  author: "Harrix"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+<div>Hello, world!</div>
+<script src="main.js"></script>
+<a href="#">ссылка на страницу project-map</a>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>
