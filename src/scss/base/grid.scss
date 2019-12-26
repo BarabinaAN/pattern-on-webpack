@@ -1,0 +1,33 @@
+.grid {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  
+    .cell-1,
+    .cell-2,
+    .cell-3 {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 10px;
+      box-sizing: border-box;
+      &.combine {
+        width: calc(33.33%*2);
+      }
+      &.pt {
+        padding-top: 20px;
+      }
+      &.not-pt {
+        padding: 0;
+      }
+    }
+    .cell-1 {
+      width: 100%;
+    }
+    .cell-2 {
+      width: 50%;
+    }
+    .cell-3 {
+      width: 33.33%;
+    }
+  }

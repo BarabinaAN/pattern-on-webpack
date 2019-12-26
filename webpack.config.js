@@ -1,34 +1,49 @@
 const path = require('path');
+const fs = require("fs");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-  entry: { main: './src/index.js' },
+function generateHtmlPlugins(templateDir) {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  return templateFiles.map(item => {
+    const parts = item.split(".");
+    const name = parts[0];
+    const extension = parts[1];
+    return new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+      inject: false
+    });
+  });
+}
+
+const htmlPlugins = generateHtmlPlugins("./src/html/pages");
+
+const config = {
+  entry: ["./src/js/index.js", "./src/scss/index.scss" ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: './js/bundle.js'
   },
+  mode: "development",
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        test: /\.(js|jsx)$/,
+        loader: 'babel-loader',
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/, 
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
           use: ['css-loader', 'postcss-loader', 'sass-loader'],
           publicPath: './dist'
         })
       },
       {
         test: /\.html$/,
-        include: path.resolve(__dirname, './src/html'),
+        include: path.resolve(__dirname, 'src/html/includes'),
         use: ['raw-loader']
       },
     ]
@@ -39,19 +54,28 @@ module.exports = {
   },
   plugins: [ 
     new ExtractTextPlugin(
-      {filename: 'style.css'}
+      {filename: 'css/main.css'}
     ),
-    new HtmlWebpackPlugin({
-      inject: false,
-      hash: true,
-      template: './src/html/index.html',
-      filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      hash: true,
-      template: './src/project-map.html',
-      filename: 'project-map.html'
-    })
-  ]
+    new CopyWebpackPlugin([
+      {
+        from: "./src/fonts",
+        to: "./fonts"
+      },
+      {
+        from: "./src/favicon",
+        to: "./favicon"
+      },
+      {
+        from: "./src/images",
+        to: "./images"
+      }
+    ])
+  ].concat(htmlPlugins)
+};
+
+module.exports = (env, argv) => {
+  if (argv.mode === "development") {
+    config.plugins.push(new CleanWebpackPlugin());
+  }
+  return config;
 };
