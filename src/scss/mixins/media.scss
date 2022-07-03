@@ -1,0 +1,12 @@
+// media requests
+
+@mixin media-min($screen) {
+  @media screen and (min-width: $screen) {
+     @content;
+  }
+}
+@mixin media-max($screen) {
+  @media screen and (max-width: $screen - 1px) {
+     @content;
+  }
+}

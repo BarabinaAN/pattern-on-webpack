@@ -1,0 +1,40 @@
+<% var list = [
+  {
+    title: 'Lorem <span> ipsum dolor sit amet.</span>',
+    text: '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit voluptatibus modi temporibus quos tempora laborum deleniti sint dignissimos tempore quae.</p>',
+    src: "./images/slide-1.jpg",
+  },
+  {
+    title: 'Lorem <span> ipsum dolor sit amet.</span>',
+    text: '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit voluptatibus modi temporibus quos tempora laborum deleniti sint dignissimos tempore quae.</p>',
+    src: "./images/slide-2.jpg",
+  },
+]; %>
+
+<div class="c-main-carousel">
+  <div class="c-main-carousel__container js-main-carousel">
+
+      <% list.forEach(function(item) { %>
+      <div class="c-main-carousel__item">
+        <div class="c-main-carousel__item-container">
+          <div class="c-main-carousel__img">
+            <img class="img-fullwidth"
+              data-lazy="<%=item.src%>"
+              src="<%=item.src%>"
+              alt="<%=item.title%>"
+              title="<%=item.title%>" />
+          </div>
+
+          <div class="c-main-carousel__content">
+            <div class="c-main-carousel__header">
+              <h2 class="c-main-carousel__title"><%=item.title%></h2>
+            </div>
+            <div class="c-main-carousel__footer"><%=item.text%></div>
+          </div>
+        </div>
+
+      </div>
+      <% }) %>
+
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.c-menu {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include grid($grid-gap);
+    align-items: center;
+    @include media-max($media-md) {
+      width: 100%;
+      overflow-x: auto;
+      margin: 0 -5px;
+      & > * {
+        margin: 0 5px;
+      }
+    }
+  }
+  li {
+    padding: 0;
+  }
+  a {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $text-color;
+    transition: $transition-default;
+    @include media-min($media-md) {
+        font-size: 12px;
+    }
+    &:hover {
+      color: $color-active;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+//глобальные переменные
+$color-active: #ed5340;
+$color-default: #090808;
+$color-invert: #fff;
+$color-secondary: #F2F2F2;
+$color-third: #00d4e1;
+$color-disabled: #999999;
+$color-success: #4caf50;
+$color-error: #f44336;
+
+$text-color: #000000;
+$text-color-secondary: #15222B;
+$text-color-note: $color-disabled;
+$text-color-invert: $color-invert;
+$text-color-active: $color-active;
+
+$header-color: $text-color-secondary;
+$header-color-invert: $color-invert;
+
+$link-color: $text-color-active;
+$link-color-hover: $text-color;
+
+$bg-color: #0D0D0D;
+$bg-color-invert: #fff;
+
+// font props
+$font-family-default: "Montserrat", sans-serif;
+$font-family-secondary: $font-family-default;
+$font-size: 14px;
+
+//
+$transition-default: 0.25s all ease-in-out;
+
+//
+$text-margin: 55px;
+$text-margin-mobile: 30px;
+
+$media-gap: 20px;
+
+// screen size
+$xxxl: 1585px;
+$xxl: 1400px;
+$xl: 1280px;
+$lg: 1170px;
+$md: 960px;
+$sm: 728px;
+$xs: 480px;
+
+$grid-columns: 12;
+$grid-gap: 20px;
+$grid-breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+  xxxl: $xxxl
+);
+
+// media
+$media-xxxl: 1625px;
+$media-xxl: 1440px;
+$media-xl: 1320px;
+$media-lg: 1210px;
+$media-md: 960px;
+$media-sm: 768px;
+$media-xs: 480px;
+
+@import '../mixins/media.scss';
+@import '../mixins/space.scss';
+@import '../mixins/container.scss';

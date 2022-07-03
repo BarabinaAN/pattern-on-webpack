@@ -1,0 +1,31 @@
+@mixin custom-scroll($thumb-color: #0093b2, $bar-color: #f9f9fd, $bar-size: 5px) {
+  $thumb-radius: 0;
+  // Chrome
+  &::-webkit-scrollbar {
+    width: $bar-size;
+    height: $bar-size;
+    background-color: $bar-color;
+  }
+
+  &::-webkit-scrollbar-thumb{
+    border-radius: $thumb-radius;
+    background-color: $thumb-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: $thumb-radius;
+    background-color: $bar-color;
+  }
+
+  // FF
+  scrollbar-color: $thumb-color $bar-color ;
+  scrollbar-width: thin;
+
+  // IE
+  scrollbar-base-color: $thumb-color;
+  scrollbar-3dlight-color: $thumb-color;
+  scrollbar-highlight-color: $thumb-color;
+  scrollbar-track-color: $bar-color;
+  scrollbar-arrow-color: $thumb-color;
+  scrollbar-shadow-color: $thumb-color;
+}

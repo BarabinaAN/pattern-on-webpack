@@ -1,0 +1,44 @@
+.grid {
+    display: flex;
+    flex-direction: row;
+    margin: 0 $grid-gap/2 * -1;
+    flex-wrap: wrap;
+    width: 100%;
+  
+    &.-offset {
+      margin: 0;
+    }
+  
+    [class*='col-'] {
+      margin: 0 $grid-gap/2;
+      padding: 0;
+      width: 100%;
+    }
+    [class*='col-offset'] {
+      margin: 0;
+    }
+  
+    @mixin create-selectors( $breakpoint: null) {
+      $infix: if($breakpoint == null, '', '-#{$breakpoint}');
+  
+      @for $i from 1 through $grid-columns {
+          $path: $grid-columns/$i;
+  
+          .col#{$infix}-#{$i} {
+            width: calc(100%/#{$path} - #{$grid-gap});
+          }
+          .col-offset#{$infix}-#{$i} {
+            width: calc(100%/#{$path});
+            margin: 0;
+          }
+      }
+    }
+  
+    @include create-selectors;
+  
+    @each $breakpoint, $width in $grid-breakpoints {
+      @media (min-width: $width) {
+        @include create-selectors( $breakpoint);
+      }
+    }
+  }

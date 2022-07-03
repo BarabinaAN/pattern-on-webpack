@@ -1,0 +1,73 @@
+.l-footer {
+  background-color: #101114;
+  color: $text-color-invert;
+  &__container {
+    @include container();
+    padding: $text-margin-mobile 0;
+    @include media-min($media-md) {
+      display: flex;
+      align-items: baseline;
+      padding: $text-margin 0;
+    }
+  }
+
+  &__address {
+    color: $text-color-invert;
+    margin-bottom: $text-margin-mobile;
+    display: inline-block;
+    @include media-min($media-md) {
+      flex: 1;
+      margin-bottom: 0;
+    }
+  }
+  &__menu {
+    margin-bottom: $text-margin-mobile;
+    @include media-min($media-md) {
+      flex: 2;
+      order: 1;
+      margin-bottom: 0;
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    @include media-min($media-md) {
+      flex: 1;
+    }
+    a {
+      color: $text-color-invert;
+      transition: $transition-default;
+      &:hover {
+        color: $color-active;
+      }
+    }
+  }
+}
+
+.с-footer-menu {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include media-min($media-md) {
+      @include grid($grid-gap);
+    }
+  }
+  li {
+    padding: 0;
+    @include media-max($media-md) {
+      margin: 0 0 10px;
+    }
+  }
+  a {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $text-color-invert;
+    transition: $transition-default;
+    &:hover {
+      color: $color-active;
+    }
+  }
+}

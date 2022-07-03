@@ -1,0 +1,51 @@
+.l-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(16, 17, 20, 0.7);
+    z-index: 100;
+    &__wrap {
+       max-width: 480px;
+       position: relative;
+       top: 50%;
+       margin: 0 auto;
+       transform: translateY(-50%);
+       @include media-max($media-xs) {
+          height: 100%;
+          overflow-y: visible;
+          overflow-x: hidden;
+       }
+    }
+    &__container {
+      padding: $text-margin-mobile $media-gap;
+      background-color: $bg-color-invert;
+      border-radius: 4px;
+      @include media-min($media-md) {
+        padding: 30px 40px 60px;
+      }
+    }
+    &__close {
+       position: absolute;
+       right: 15px;
+       top: 15px;
+       z-index: 10;
+       cursor: pointer;
+       &:hover,
+       &.is-hover {
+           .icon-close:before {
+              color: $color-active;
+              transform: rotate(180deg);
+           }
+       }
+    }
+    &__body {
+       width: 100%;
+       height: 100%;
+    }
+    &.is-show {
+       display: block;
+    }
+  }

@@ -1,0 +1,99 @@
+input,
+button {
+  font-family: $font-family-default;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type="button"],
+button {
+  border: none;
+}
+
+@mixin btn-default($height, $color-bg) {
+  display: inline-block;
+  font-weight: 600;
+  height: $height;
+  line-height: $height;
+  max-width: 100%;
+  padding: 0 20px;
+  background-color: $color-bg;
+  transition: $transition-default;
+  text-transform: uppercase;
+  border: 1px solid $color-bg;
+  cursor: pointer;
+  span {
+      position: relative;
+      vertical-align: middle;
+      z-index: 3;
+  }
+  i {
+      display: inline-block;
+      vertical-align: middle;
+  }
+  @include media-max($media-sm) {
+    height: 45px;
+    line-height: 45px;
+  }
+}
+@mixin btn-font-default($family, $size, $color, $transform) {
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+  text-transform: $transform;
+  @include media-max($media-sm) {
+    $def: $size - 4px;
+    @if ($def - 4px > 12px) {
+      font-size: $def;
+    }
+  }
+}
+
+@mixin btn-hover ($color-bg, $color) {
+  &:hover,
+  &.is-hover {
+    background-color: $color-bg;
+    color: $color;
+    border: 1px solid $color-bg;
+  }
+  &:focus {
+  }
+}
+
+.c-btn {
+  @include btn-default(40px, $color-active);
+  @include btn-font-default($font-family-secondary, 12px, $color-invert, uppercase);
+  @include btn-hover($color-secondary, $text-color-secondary);
+}
+
+.c-btn-up {
+  position: fixed;
+  bottom: 40px;
+  right: $media-gap;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $text-color-invert;
+  transition: $transition-default;
+  padding: 10px 15px;
+  background-color: $color-active;
+  opacity: 0;
+  pointer-events: none;
+  @include media-min($media-md) {
+    bottom: 65px;
+  }
+  &.has-show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  &:hover {
+    background-color: $color-secondary;
+    color: $text-color;
+  }
+}

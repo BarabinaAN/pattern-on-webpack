@@ -1,0 +1,34 @@
+
+@mixin create-space($space-count, $space-name: 'padding-top') {
+  @for $i from 1 through $space-count {
+      &-#{$i} {
+        @if $space-name == 'padding-top'{
+          padding-top: $text-margin-mobile/2 * $i !important;
+        }
+        @if $space-name == 'padding-bottom'{
+          padding-bottom: $text-margin-mobile/2 * $i !important;
+        }
+        @if $space-name == 'margin-top'{
+          margin-top: $text-margin-mobile/2 * $i !important;
+        }
+        @if $space-name == 'margin-bottom'{
+          margin-bottom: $text-margin-mobile/2 * $i !important;
+        }
+
+        @media (min-width: $media-md) {
+          @if $space-name == 'padding-top'{
+            padding-top: $text-margin/2 * $i !important;
+          }
+          @if $space-name == 'padding-bottom'{
+            padding-bottom: $text-margin/2 * $i !important;
+          }
+          @if $space-name == 'margin-top'{
+            margin-top: $text-margin/2 * $i !important;
+          }
+          @if $space-name == 'margin-bottom'{
+            margin-bottom: $text-margin/2 * $i !important;
+          }
+        }
+      }
+  }
+}

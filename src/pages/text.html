@@ -1,0 +1,136 @@
+<%= _.template(require('../components/head.html').default)({ title: "Главная" }) %>
+<%= _.template(require('../components/header/header.html').default)() %>
+
+<div class="container">
+  <h1>Заголовок h1</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sequi atque natus. Modi, esse, eum veniam mollitia impedit harum optio at nam placeat quo fugit cum perferendis delectus ipsam dolores.</p>
+  <br>
+
+  <h2>Заголовок h2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sequi atque natus. Modi, esse, eum veniam mollitia impedit harum optio at nam placeat quo fugit cum perferendis delectus ipsam dolores.</p>
+  <br>
+
+  <div class="grid">
+    <div class="col-xs-6 col-sm-12 col-lg-3">
+      <h3>Заголовок h3</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, sit.</p>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-lg-3">
+      <h4>Заголовок h4</h4>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, sit.
+    </div>
+    <div class="col-xs-6 col-sm-4 col-lg-3">
+      <h5>Заголовок h5</h5>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, sit.
+    </div>
+    <div class="col-xs-6 col-sm-4 col-lg-3">
+      <h6>Заголовок h6</h6>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, sit.
+    </div>
+  </div>
+  <br>
+
+  <h2>Сетка</h2>
+  <div class="grid">
+    <div class="col-md-3 col-xl-3">
+      <h6>Заголовок h6</h6>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, sit.</p>
+    </div>
+    <div class="col-md-3 col-xl-6">
+      <h6>Заголовок h6</h6>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, sit.
+    </div>
+    <div class="col-md-3 col-xl-3">
+      <h6>Заголовок h6</h6>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, sit.
+    </div>
+    <div class="col-md-3 col-xl-12">
+      <h6>Заголовок h6</h6>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, sit.
+    </div>
+  </div>
+  <br>
+
+  <h2>Изображения</h2>
+  <div class="grid">
+    <div class="col-xs-12 col-sm-6 col-xl-4">
+      <h5>По ширине: img-fullwidth </h5>
+      <div style="height: 250px;background-color: #cde4f2;">
+        <img class="img-fullwidth" src="./images/logo.png" alt="test" title="test">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-xl-4">
+      <h5>По центру: img-center</h5>
+      <div style="height: 250px;background-color: #cde4f2;">
+        <img class="img-center" src="./images/logo.png" alt="test" title="test">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-xl-4">
+      <h5>По левому краю: img-left</h5>
+      <div style="height: 250px;background-color: #cde4f2;">
+        <img class="img-left" src="./images/logo.png" alt="test" title="test">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-xl-4">
+      <h5>По правому краю: img-right</h5>
+      <div style="height: 250px;background-color: #cde4f2;">
+        <img class="img-right" src="./images/logo.png" alt="test" title="test">
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <h3>Маркированный список</h3>
+  <ul>
+    <li>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, eius.</p>
+    </li>
+    <li>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, eius.</p>
+    </li>
+    <li>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, eius.</p>
+    </li>
+  </ul>
+  <br>
+
+  <h3>Пользовательский маркированный список</h3>
+  <ul class="list-point">
+    <li>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, eius.</p>
+    </li>
+    <li>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, eius.</p>
+    </li>
+    <li>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, eius.</p>
+    </li>
+  </ul>
+  <br>
+
+  <h3>Нумерованный список</h3>
+  <ol>
+    <li>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, eius.</p>
+    </li>
+    <li>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, eius.</p>
+    </li>
+    <li>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, eius.</p>
+    </li>
+  </ol>
+  <br>
+
+  <h3>Cписок описаний</h3>
+  <dl>
+    <dt>Заголовок группы</dt>
+    <dd>Lorem ipsum dolor sit amet.</dd>
+    <dt><h6>Заголовок группы h6</h6></dt>
+    <dd>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, eius.</dd>
+    <dd>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, eius.</dd>
+  </dl>
+
+</div>
+
+<%= _.template(require('../components/footer/footer.html').default)({}) %>

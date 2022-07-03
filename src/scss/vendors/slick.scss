@@ -1,0 +1,68 @@
+@mixin slick-default() {
+  .slick {
+    &-list {
+      // padding: 0 10% 0 0 !important;
+    }
+    &-disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    &-prev,
+    &-next {
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 50px;
+      background-position: center;
+      width: 50px;
+      height: 50px;
+      font-size: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      transition: $transition-default;
+
+      @include media-min($media-lg) {
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    &-prev {
+      left: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='148' height='148' viewBox='0 0 148 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='74' cy='74' r='74' transform='rotate(180 74 74)' fill='white'/%3E%3Cg clip-path='url(%23clip0_4507_979)'%3E%3Cpath d='M96.2893 69.4288H62.3819L77.9425 53.8682L74.0002 49.9258L51.7109 72.215L74.0002 94.5041L77.9425 90.5618L62.3819 75.0011H96.2893V69.4288Z' fill='%2315222B'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_4507_979'%3E%3Crect width='44.5783' height='44.5783' fill='white' transform='translate(51.7109 49.9258)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    }
+    &-next {
+      right: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='148' height='148' viewBox='0 0 148 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='74' cy='74' r='74' fill='white'/%3E%3Cg clip-path='url(%23clip0_4507_979)'%3E%3Cpath d='M51.7107 78.5712L85.6181 78.5712L70.0575 94.1318L73.9998 98.0742L96.2891 75.785L73.9998 53.4959L70.0575 57.4382L85.6181 72.9989L51.7107 72.9989L51.7107 78.5712Z' fill='%2315222B'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_4507_979'%3E%3Crect width='44.5783' height='44.5783' fill='white' transform='translate(96.2891 98.0742) rotate(-180)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    }
+
+    &-dots {
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      li {
+        padding: 0;
+        list-style: none;
+        margin: 5px;
+        width: 10px;
+        height: 10px;
+      }
+      button {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        font-size: 0;
+        background-color: $color-secondary;
+      }
+      .slick-active {
+        button {
+          background-color: $color-active
+        }
+      }
+    }
+  }
+}

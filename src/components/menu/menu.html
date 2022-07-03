@@ -1,0 +1,96 @@
+        </main>
+        <footer class="l-footer">
+            <div class="l-footer__container">
+                <div class="l-footer__menu">
+                    <nav class="с-footer-menu">
+                        <ul>
+                            <li><a href="#about">о&nbsp;компании</a></li>
+                            <li><a href="#services">Услуги</a></li>
+                            <li><a href="#cases">кейсы</a></li>
+                            <li><a href="#teams">Команда</a></li>
+                            <li><a href="#cmwp">cmwp</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <a href="#" class="l-footer__address">
+                    Citywalk 2, building 5-05 <br />
+                    Happiness street, Dubai , UAE
+                </a>
+                <div class="l-footer__info">
+                    <a href="tel:998940220377">+998 94 022 0377</a>
+                    <a href="mailto:Denis.Sokolov@cmwp.uz">Denis.Sokolov@cmwp.uz</a>
+                </div>
+            </div>
+        </footer>
+
+        <a href="#" class="c-btn-up js-btn-up">в начало</a>
+
+        <script src="js/bundle.js"></script>
+        <% if ( typeof (js)  != 'undefined' ) { %>
+        <script src="js/<%=js%>.js"></script>
+        <% } %>
+
+        <!-- Всплывашка с формой обратной связи -->
+        <div class="l-popup" id="callback">
+            <div class="l-popup__wrap">
+            <div class="l-popup__close js-close-popup">
+                <i class="icon-close"></i>
+            </div>
+            <div class="l-popup__body">
+                <div class="l-popup__container">
+
+                <form class="c-form-callback">
+                    <div class="c-form-callback__title">Обратная <br/> связь</div>
+                    <div class="c-form-callback__item">
+                        <label class="c-form-callback__label">
+                            <span>Имя</span>
+                            <input class="c-input" type="text" placeholder="Имя" />
+                        </label>
+                    </div>
+                    <div class="c-form-callback__item">
+                        <label class="c-form-callback__label">
+                            <span>Телефон</span>
+                            <input class="c-input" type="text" placeholder="Телефон" />
+                        </label>
+                    </div>
+                    <div class="c-form-callback__item">
+                        <label class="c-form-callback__label">
+                            <span>E-mail</span>
+                            <input class="c-input" type="email" placeholder="E-mai" />
+                        </label>
+                    </div>
+                    <div class="c-form-callback__item">
+                        <label class="c-form-callback__label">
+                            <span>Сообщение</span>
+                            <textarea class="c-input" placeholder="Сообщение"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="c-form-callback__item">
+                        <div class="c-form-callback__policity">Нажимая «Отправить» вы соглашаетесь с <br/> обработкой персональных данных</div>
+                    </div>
+                    <div class="c-form-callback__submit">
+                        <button class="c-btn" type="submit">Отправить</button>
+                    </div>
+                </form>
+
+                <!-- c-form-success - при успешной отправке формы -->
+                <!-- ВНИМАНИЕ!!! style="display: block;" убрать после реализации отправки формы -->
+                <!--<div class="c-form-success" style="display: block;">
+                    <i class="icon-success"></i>Сообщение успешно отправлено
+                </div>
+                -->
+                <!-- ВНИМАНИЕ!!! style="display: block;" убрать после реализации отправки формы -->
+                <!-- c-form-error - блок с сообщениями об ошибках -->
+                <!--<div class="c-form-error" style="display: block;">
+                    <i class="icon-error"></i>
+                    К сожалению произошла ошибка,
+                    неверно указан номер
+                </div>
+                -->
+                </div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+@mixin container() {
+  max-width: 100%;
+  margin: 0 $media-gap;
+  @include media-min($media-xxl) {
+    margin: 0 auto;
+    max-width: 1366px;
+  }
+}
+@mixin grid($gap) {
+  display: flex;
+  margin: 0 $gap/-2;
+  & > * {
+    margin: 0 $gap/2;
+  }
+}

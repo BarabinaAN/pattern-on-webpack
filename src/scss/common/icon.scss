@@ -1,0 +1,64 @@
+.icon-close {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  &::before {
+    transition: $transition-default;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    content: '\2715';
+    font-size: 18px;
+    color: #808080;
+    font-style: initial;
+    line-height: 1;
+  }
+}
+.icon-success {
+  display: inline-block;
+  &::before {
+    transition: $transition-default;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    content: '\2714';
+    font-size: 24px;
+    color: $color-success;
+    font-style: initial;
+    line-height: 1;
+  }
+}
+.icon-error {
+  display: inline-block;
+  &::before {
+    transition: $transition-default;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    content: '\2718';
+    font-size: 24px;
+    color: $color-error;
+    font-style: initial;
+    line-height: 1;
+  }
+}
+.icon-wa {
+  display: inline-block;
+  background-image: url(../images/icons/wa.svg);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+}
+.icon-tg {
+  display: inline-block;
+  background-image: url(../images/icons/tg.svg);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+}

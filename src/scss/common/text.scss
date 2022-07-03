@@ -1,0 +1,157 @@
+
+*:focus,
+*:active {
+  outline: none;
+}
+* {
+  //убрать фона на Android при клике
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-default;
+  font-size: $font-size;
+  color: $text-color;
+  max-width: 100%;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-secondary;
+  font-weight: 600;
+  color: $header-color;
+  margin: 0 0 $text-margin-mobile;
+  @include media-min($media-md) {
+    margin: 0 0 $text-margin;
+  }
+}
+h1 {
+  font-weight: 700;
+}
+h1, h2, h3 {
+  font-size: 30px;
+  @include media-min(350px) {
+    font-size: 34px;
+  }
+  @include media-min($media-md) {
+    font-size: 48px;
+  }
+  span {
+    display: block;
+    font-size: 14px;
+    margin: 0 0 $text-margin-mobile;
+    @include media-min($media-md) {
+      font-size: 16px;
+      margin: 0 0 $text-margin;
+    }
+  }
+}
+
+ul,
+li,
+ol {
+  line-height: 1.42;
+  margin: 0 0 $text-margin-mobile;
+  padding: 0 0 0 1em;
+  @include media-min($media-md) {
+    margin: 0 0 $text-margin;
+  }
+}
+ol {
+  list-style: decimal;
+  li {
+    color: #333333;
+    margin-bottom: 0;
+  }
+}
+ul {
+  &.list-point {
+    list-style: none;
+    padding-left: 0;
+    li {
+      padding-left: 2em;
+      position: relative;
+      &:before {
+        color: $color-active;
+        content: "\2714";
+        font-size: 1em;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+dl, dt, dd {
+  margin: 0 0 $text-margin-mobile;
+  @include media-min($media-md) {
+    margin: 0 0 $text-margin;
+  }
+}
+
+p {
+  line-height: 1.42;
+  margin-top: 0;
+  margin-bottom: $text-margin-mobile/2;
+  @include media-min($media-md) {
+    margin-bottom: $text-margin/2;
+  }
+}
+
+a {
+  color: $color-active;
+  line-height: 1.42;
+  text-decoration: none;
+  transition: $transition-default;
+  &.link-invert {
+    color: $text-color-invert;
+    &:hover {
+      color: $color-active;
+    }
+  }
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  &.img-fullwidth {
+    width: 100%;
+  }
+  &.img-left {
+    margin-left: 0;
+  }
+  &.img-right {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  &.img-center {
+    margin: 0 auto;
+  }
+}
+
+.pt {
+  @include create-space(8);
+}
+.pb {
+  @include create-space(8, 'padding-bottom');
+}
+.mt {
+  @include create-space(8, 'margin-top');
+}
+.mb {
+  @include create-space(8, 'margin-bottom');
+}
+br {
+  @include media-max($media-xs) {
+    display: none;
+  }
+}
+.text-accent {
+  color: $color-active;
+}

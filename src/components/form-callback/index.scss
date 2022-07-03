@@ -1,0 +1,56 @@
+.c-form-callback {
+   &__title {
+     font-family: $font-family-secondary;
+     color: $header-color;
+     font-weight: 700;
+     font-size: 36px;
+     text-transform: uppercase;
+     margin-bottom: 15px;
+   }
+   &__label {
+     font-family: $font-family-default;
+     span {
+       font-weight: 500;
+       font-size: 12px;
+       color: #808080;
+       margin-bottom: 5px;
+       display: inline-block;
+     }
+   }
+   &__item {
+     margin-bottom: 15px;
+   }
+   &__policity {
+     color: #808080;
+     font-size: 14px;
+   }
+   &__submit {
+     .c-btn {
+       width: 100%;
+     }
+     @include media-min($media-lg) {
+       width: 150px;
+     }
+   }
+   textarea {
+     padding: 12px;
+     height: 100px;
+   }
+ }
+ 
+ .c-form-success {
+   display: none;
+   margin: 10px 0;
+   color: $color-success;
+   .icon-success {
+     margin-right: 5px;
+   }
+ }
+ .c-form-error {
+   display: none;
+   margin: 10px 0;
+   color: $color-error;
+   .icon-error {
+     margin-right: 5px;
+   }
+ }

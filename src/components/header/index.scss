@@ -1,0 +1,22 @@
+.l-header {
+  &__container {
+    @include container();
+    padding: $text-margin-mobile 0;
+    @include media-min($media-md) {
+      padding: 35px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+  &__logo {
+    max-width: 163px;
+    display: inline-block;
+  }
+  &__menu {
+    padding-top: $text-margin-mobile;
+    @include media-min($media-md) {
+      padding-top: 0;
+    }
+  }
+}
